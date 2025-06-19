@@ -32,3 +32,39 @@ export default function RootLayout({
     </html>
   );
 }
+
+function generateVacancyText(answers: string[]) {
+  return (
+    <div className="bg-white rounded-xl shadow p-8 space-y-6">
+      <h2 className="text-2xl font-bold mb-4">Вакансия</h2>
+      <section>
+        <h3 className="text-lg font-semibold mb-1 text-blue-700">О компании и проекте</h3>
+        <p className="text-neutral-800">{answers[0] || '-'}</p>
+      </section>
+      <section>
+        <h3 className="text-lg font-semibold mb-1 text-blue-700">Стек и технологии</h3>
+        <ul className="list-disc pl-5 text-neutral-800">
+          {answers[1].split(/[\n,;]+/).map((item, i) => <li key={i}>{item.trim()}</li>)}
+        </ul>
+      </section>
+      <section>
+        <h3 className="text-lg font-semibold mb-1 text-blue-700">Условия</h3>
+        <ul className="list-disc pl-5 text-neutral-800">
+          {answers[2].split(/[\n,;]+/).map((item, i) => <li key={i}>{item.trim()}</li>)}
+        </ul>
+      </section>
+      <section>
+        <h3 className="text-lg font-semibold mb-1 text-blue-700">Требования</h3>
+        <ul className="list-disc pl-5 text-neutral-800">
+          {answers[3].split(/[\n,;]+/).map((item, i) => <li key={i}>{item.trim()}</li>)}
+        </ul>
+      </section>
+      <section>
+        <h3 className="text-lg font-semibold mb-1 text-blue-700">Чем предстоит заниматься</h3>
+        <ul className="list-disc pl-5 text-neutral-800">
+          {answers[4].split(/[\n,;]+/).map((item, i) => <li key={i}>{item.trim()}</li>)}
+        </ul>
+      </section>
+    </div>
+  );
+}
