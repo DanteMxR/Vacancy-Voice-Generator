@@ -27,7 +27,6 @@
 1. **Клонируйте репозиторий:**
    ```bash
    git clone https://github.com/DanteMxR/Vacancy-Voice-Generator.git
-   cd labtz
    ```
 2. **Установите зависимости:**
    ```bash
